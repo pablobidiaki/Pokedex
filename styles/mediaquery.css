@@ -1,0 +1,29 @@
+/*Dispositivos pequenos*/
+@media screen and (min-width: 465px) {
+    #container{
+        max-width: 465px;
+    }
+    #pokemons{
+        grid-template-columns: 1fr 1fr;
+    }
+
+    imag{
+        height: 10px;
+    }
+}
+
+@media screen and (min-width: 1020px){
+    body{
+        background-color: white;
+    }
+
+    #container{
+        background-color:lightgray;
+        margin: 0 auto;
+        max-width: 80vw;
+        border-radius: 0px 0px 5px 0px ;
+    }
+    #pokemons{
+        grid-template-columns: 1fr 1fr;
+    }
+}
