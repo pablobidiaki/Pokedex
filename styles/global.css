@@ -35,6 +35,7 @@ body{
     margin: .75rem;
     padding:.75rem;
     border-radius: 1rem;
+    cursor: pointer;
 }
 
 .normal{
