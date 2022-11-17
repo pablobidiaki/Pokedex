@@ -1,10 +1,10 @@
 /*Dispositivos pequenos*/
-@media screen and (min-width: 465px) {
+@media screen and (min-width: 565px) {
     #container{
-        max-width: 465px;
+        max-width: 565px;
     }
-    #pokemons{
-        grid-template-columns: 1fr;
+    .pokemons{
+        grid-template-columns: 1fr 1fr;
     }
 
     #cointaner{
@@ -27,11 +27,12 @@
         background-color:rgba(211, 211, 211, 0.849);
         margin: 0 auto;
         margin-top: 15px;
+        margin-bottom: 15px;
         max-width: 80vw;
         border-radius:5px;
     }
 
     .pokemons{
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
     }
 }

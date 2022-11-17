@@ -1,6 +1,12 @@
-function convertPokemonToLi(pokemon){
-    return`
-    <li class="pokemon ${pokemon.type}">
+const pokemonList = document.getElementById('pokemonList')
+const carregarMais = document.getElementById('botao')
+const limit = 6
+let offset= 0
+
+function carregarPokemons(offset, limit){
+    pokeApi.getPokemons(offset, limit).then((pokemons = []) =>{
+        const newHtml = pokemons.map((pokemon) =>`
+            <li class="pokemon ${pokemon.type}">
                 <span class="number">#${pokemon.number}</span>
                 <span class="name">${pokemon.nome}</span>
                 <div class="detalhes">
@@ -10,11 +16,14 @@ function convertPokemonToLi(pokemon){
                     <img src="${pokemon.photo}" alt="">
                 </div>
             </li>
-            `
+        `).join('')
+        pokemonList.innerHTML +=newHtml
+    })
 }
 
-const pokemonList = document.getElementById('pokemonList') 
+carregarPokemons(offset, limit)
 
-pokeApi.getPokemons().then((pokemons = []) =>{
-    pokemonList.innerHTML += pokemons.map(convertPokemonToLi).join('')
+carregarMais.addEventListener('click',() =>{
+    offset += limit  
+    carregarPokemons(offset, limit)
 })
